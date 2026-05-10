@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Detail — Digital Library</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar-brand" href="/home">Digital Library</a>
+    <div class="navbar-right">
+      <span id="userGreeting"></span>
+      <a id="dashboardLink" href="/dashboard" class="btn btn-ghost btn-sm" style="display:none">My Books</a>
+      <button id="logoutBtn" class="btn btn-ghost btn-sm" style="display:none">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <a href="/home" class="back-link">← Back to catalogue</a>
+    <div id="bookContent"><div class="spinner"></div></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script>const BOOK_ID = "{{ book_id }}";</script>
+  <script src="/static/book.js"></script>
+</body>
+</html>

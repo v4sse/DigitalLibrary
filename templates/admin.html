@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Digital Library</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar-brand" href="/admin-panel">Digital Library — Admin</a>
+    <div class="navbar-right">
+      <span id="userGreeting"></span>
+      <button id="logoutBtn" class="btn btn-ghost btn-sm">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="stats">Stats</button>
+      <button class="tab-btn" data-tab="books">Books</button>
+      <button class="tab-btn" data-tab="users">Users</button>
+      <button class="tab-btn" data-tab="borrows">Borrows</button>
+    </div>
+
+    <div id="stats"   class="tab-panel active"><div class="spinner"></div></div>
+    <div id="books"   class="tab-panel"><div class="spinner"></div></div>
+    <div id="users"   class="tab-panel"><div class="spinner"></div></div>
+    <div id="borrows" class="tab-panel"><div class="spinner"></div></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/static/admin.js"></script>
+</body>
+</html>

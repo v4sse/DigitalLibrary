@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Library</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar-brand" href="/home">Digital Library</a>
+    <div class="navbar-right">
+      <span id="userGreeting"></span>
+      <a id="dashboardLink" href="/dashboard" class="btn btn-ghost btn-sm" style="display:none">My Books</a>
+      <button id="logoutBtn" class="btn btn-ghost btn-sm" style="display:none">Logout</button>
+      <a id="loginLink" href="/login" class="btn btn-ghost btn-sm" style="display:none">Login</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by title, author, or genre...">
+      <button class="btn btn-primary" id="searchBtn">Search</button>
+      <button class="btn btn-secondary" id="clearBtn" style="display:none">Clear</button>
+    </div>
+
+    <div class="filters" id="genreFilters">
+      <button class="filter-chip active" data-genre="">All</button>
+      <button class="filter-chip" data-genre="Fantasy">Fantasy</button>
+      <button class="filter-chip" data-genre="Sci-Fi">Sci-Fi</button>
+      <button class="filter-chip" data-genre="Mystery">Mystery</button>
+      <button class="filter-chip" data-genre="Classic">Classic</button>
+    </div>
+
+    <p id="indexHint" class="index-hint" style="display:none"></p>
+
+    <div id="booksContainer"><div class="spinner"></div></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/static/home.js"></script>
+</body>
+</html>
