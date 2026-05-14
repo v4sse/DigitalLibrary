@@ -7,11 +7,23 @@ from routes.books   import books_bp
 from routes.users   import users_bp
 from routes.admin   import admin_bp
 from routes.reviews import reviews_bp
+from datetime import timedelta
+from flask_session import Session
+from db import client
 
 load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY")
+
+app.config["SESSION_TYPE"]              = "mongodb"                                                                      
+app.config["SESSION_MONGODB"]           = client                                                                         
+app.config["SESSION_MONGODB_DB"]        = os.getenv("MONGO_DB", "digital_library")                                       
+app.config["SESSION_MONGODB_COLLECT"]   = "sessions"                                                                     
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=30)                                                         
+app.config["SESSION_PERMANENT"]         = True                                                                           
+Session(app)
+
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(books_bp)

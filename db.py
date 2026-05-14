@@ -13,7 +13,7 @@ admins      = db["admins"]
 reviews     = db["reviews"]
 book_copies = db["bookCopies"]
 borrows     = db["borrows"]
-
+sessions    = db["sessions"]
 
 def create_indexes():
     books.create_index([("genre", ASCENDING)])
@@ -27,3 +27,4 @@ def create_indexes():
     borrows.create_index([("user", ASCENDING)])
     borrows.create_index([("book", ASCENDING)])
     borrows.create_index([("borrowedAt", ASCENDING)])
+    sessions.create_index("expiration", expireAfterSeconds=0)
