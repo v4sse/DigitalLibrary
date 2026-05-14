@@ -40,6 +40,10 @@ def index():
 def login_page():
     return render_template("login.html")
 
+@app.route("/signup")
+def signup_page():
+    return render_template("signup.html")
+
 @app.route("/home")
 def home_page():
     return render_template("home.html")

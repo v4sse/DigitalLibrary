@@ -103,7 +103,8 @@ document.getElementById('logoutBtn').addEventListener('click', async () => {
         document.getElementById('logoutBtn').style.display    = '';
         document.getElementById('dashboardLink').style.display = '';
     } else {
-        document.getElementById('loginLink').style.display = '';
+        document.getElementById('loginLink').style.display  = '';
+        document.getElementById('signupLink').style.display = '';
     }
 
     loadBooks('');
